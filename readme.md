@@ -1,6 +1,6 @@
 # Laravel API Mix Boilerplate with Authentication JWT
 
-Laravel Boilerplate provides you simple and powerful JWT Authentication.
+Laravel API Mix is a boilerplate that will provides you a simple and powerful JWT Authentication.
 
 ## Installation
 
@@ -15,7 +15,7 @@ git clone https://github.com/mateusgamba/laravel-api-mix.git
 **2. Enter folder**
 
 ```
-cd laravel-api-jwt
+cd laravel-api-mix
 ```
 
 **3. Start the application**
