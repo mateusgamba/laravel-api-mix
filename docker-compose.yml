@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: digitalocean.com/php
-    container_name: app
+    container_name: api-mix-app
     tty: true
     environment:
       SERVICE_NAME: app
@@ -21,10 +21,10 @@ services:
   #Nginx Service
   webserver:
     image: nginx:alpine
-    container_name: webserver
+    container_name: api-mix-webserver
     tty: true
     ports:
-      - "9000:80"
+      - "9080:80"
       - "443:443"
     volumes:
       - ./:/var/www
@@ -35,13 +35,15 @@ services:
   #MySQL Service
   db:
     image: mysql:5.7.22
-    container_name: db
+    container_name: api-mix-db
     tty: true
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: superadmin
-      MYSQL_ROOT_PASSWORD: 123123
+      MYSQL_DATABASE: mix-dev
+      MYSQL_ROOT_PASSWORD: mixroot123
+      MYSQL_USER: mix-user
+      MYSQL_PASSWORD: mixpass123
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
